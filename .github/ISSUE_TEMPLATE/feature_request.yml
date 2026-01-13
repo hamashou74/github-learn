@@ -1,30 +1,35 @@
 name: Feature Request
-description: Suggest an enhancement or a new feature.
+description: Propose a new feature or improvement.
 title: "[Feature]: "
-labels: ["enhancement", "triage"]
+labels: ["type:feature", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to propose an improvement.
+        Use this template for product features and enhancements.
 
-        Please write this request in **English**.
+        **GitFlow note**
+        - Implement features on `feature/<issue-number>-<short-slug>` from `develop`.
 
-  - type: checkboxes
-    id: duplicates
+  - type: dropdown
+    id: area
     attributes:
-      label: Is there an existing request for this?
-      description: Please search the existing issues before creating a new one.
+      label: Area
       options:
-        - label: I have searched the existing issues.
-          required: true
+        - Backend (API)
+        - Frontend (Web)
+        - Infrastructure / DevOps
+        - Documentation
+        - Cross-cutting
+    validations:
+      required: true
 
   - type: textarea
     id: problem
     attributes:
       label: Problem statement
-      description: What problem are you trying to solve? Who is impacted?
-      placeholder: Describe the pain point and why it matters.
+      description: What problem are we solving, and for whom?
+      placeholder: "As a <user>, I want <capability>, so that <benefit>."
     validations:
       required: true
 
@@ -32,17 +37,7 @@ body:
     id: proposal
     attributes:
       label: Proposed solution
-      description: What would you like to happen? Describe the desired behavior/workflow.
-      placeholder: Describe your proposed solution in detail.
-    validations:
-      required: true
-
-  - type: textarea
-    id: motivation
-    attributes:
-      label: Motivation / use case
-      description: Explain the use case. Why is this a good addition? What does it enable?
-      placeholder: Provide context that helps us evaluate priority and scope.
+      description: Describe the proposed approach at a high level.
     validations:
       required: true
 
@@ -50,28 +45,33 @@ body:
     id: alternatives
     attributes:
       label: Alternatives considered
-      description: What alternatives or workarounds have you tried?
-      placeholder: Describe alternatives and why they are insufficient.
-    validations:
-      required: false
-
-  - type: dropdown
-    id: impact
-    attributes:
-      label: Impact
-      description: Roughly, how impactful is this to your workflow?
-      multiple: false
-      options:
-        - Low (nice to have)
-        - Medium
-        - High (blocks work)
+      description: List alternative approaches and trade-offs.
     validations:
       required: false
 
   - type: textarea
-    id: additional_context
+    id: acceptance
     attributes:
-      label: Additional context
-      description: Links, references, mockups, screenshots, or prior art.
+      label: Acceptance criteria
+      description: Define "done" in verifiable terms.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-goals / out of scope
+      description: What is explicitly not included?
     validations:
       required: false
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight checklist
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true

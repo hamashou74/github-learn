@@ -1,122 +1,124 @@
 name: Bug Report
-description: Report a problem to help us improve.
+description: Report a defect in the product (non-emergency).
 title: "[Bug]: "
-labels: ["bug", "triage"]
+labels: ["type:bug", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to file a bug report.
+        Thanks for taking the time to fill out this bug report.
 
-        **Security notice:** If this is a security vulnerability, please do **not** open a public issue.
-        Use the security reporting process described in SECURITY.md (or the link in the template chooser).
+        **GitFlow note**
+        - Typical fixes: create a `bugfix/<issue-number>-<short-slug>` branch from `develop`.
+        - Production emergencies: use the **Hotfix** template instead.
 
-        Please write this report in **English**.
-
-  - type: checkboxes
-    id: duplicates
+  - type: dropdown
+    id: area
     attributes:
-      label: Is there an existing issue for this?
-      description: Please search the existing issues before creating a new one.
+      label: Area
+      description: Where does the issue appear?
       options:
-        - label: I have searched the existing issues.
-          required: true
-
-  - type: textarea
-    id: current_behavior
-    attributes:
-      label: Current behavior
-      description: What is happening? Include screenshots if relevant.
-      placeholder: A clear and concise description of the bug.
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected_behavior
-    attributes:
-      label: Expected behavior
-      description: What did you expect to happen?
-      placeholder: A clear and concise description of what you expected.
-    validations:
-      required: true
-
-  - type: textarea
-    id: repro_steps
-    attributes:
-      label: Steps to reproduce
-      description: Provide minimal, precise steps to reproduce the issue.
-      placeholder: |
-        1. Go to '...'
-        2. Click '...'
-        3. Run '...'
-        4. See error
-    validations:
-      required: true
-
-  - type: textarea
-    id: repro_example
-    attributes:
-      label: Minimal reproducible example (if applicable)
-      description: Provide a small, self-contained example (code/config/data) that reproduces the issue.
-      placeholder: |
-        ```text
-        Paste a minimal snippet here (logs, code, config, etc.)
-        ```
-    validations:
-      required: false
-
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant logs/output
-      description: Paste any relevant logs or console output.
-      render: shell
-      placeholder: |
-        Paste logs here.
-    validations:
-      required: false
-
-  - type: input
-    id: version
-    attributes:
-      label: Affected version(s)
-      description: What version(s) are impacted?
-      placeholder: e.g. 1.2.3
+        - Backend (API)
+        - Frontend (Web)
+        - Infrastructure / DevOps
+        - Documentation
+        - Unknown / Not sure
     validations:
       required: true
 
   - type: dropdown
-    id: os
+    id: severity
     attributes:
-      label: Operating system
-      multiple: false
+      label: Severity
+      description: Business/operational impact.
       options:
-        - Windows
-        - macOS
-        - Linux
-        - Other
+        - S1 - Critical (data loss / security / major outage)
+        - S2 - High (major functionality broken)
+        - S3 - Medium (partial impact, workaround exists)
+        - S4 - Low (minor issue)
     validations:
       required: true
+
+  - type: input
+    id: affected_version
+    attributes:
+      label: Affected version / commit
+      description: Release tag, commit SHA, or build identifier.
+      placeholder: "e.g., v1.4.2, 1a2b3c4, staging-2026-01-13"
+    validations:
+      required: false
 
   - type: dropdown
     id: environment
     attributes:
       label: Environment
-      description: Where does this occur?
-      multiple: false
       options:
-        - Local development
-        - CI
-        - Staging
         - Production
+        - Staging
+        - Development
+        - Other / Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Browser(s) (Frontend only)
+      description: Skip if not applicable.
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Microsoft Edge
         - Other
     validations:
       required: false
 
   - type: textarea
-    id: additional_context
+    id: what_happened
     attributes:
-      label: Additional context
-      description: Anything else that may help us diagnose the issue.
+      label: What happened?
+      description: Describe the observed behavior and context.
+      placeholder: "A clear, concise description of the problem."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      placeholder: "Describe the expected behavior."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide minimal, reliable steps.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output / stack trace
+      description: Paste logs (redact secrets). This will be formatted as code automatically.
+      render: shell
     validations:
       required: false
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight checklist
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: I confirmed no secrets (tokens, passwords, private keys) are included in this report.
+          required: true
