@@ -3,8 +3,10 @@ on:
   push:
     branches: [master]
 jobs:
-  label:
+  labeling:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
