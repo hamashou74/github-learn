@@ -1,9 +1,9 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Q&A
-    url: https://github.com/hamashou74/bookshelf/discussions
+  - name: "Q&A"
+    url: "https://github.com/hamashou74/bookshelf/discussions"
+    about: ""
 
-# Issue作成時のテンプレート設定
 defaults:
   - template: "bug_report.yml"
     name: "🐛 バグ報告"
