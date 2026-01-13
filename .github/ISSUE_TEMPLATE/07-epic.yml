@@ -1,0 +1,48 @@
+name: Epic
+description: A large deliverable composed of multiple issues.
+title: "[Epic]: "
+labels: ["type:epic"]
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What outcome are we trying to achieve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: success
+    attributes:
+      label: Success metrics
+      description: How will we measure success?
+    validations:
+      required: false
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / milestones
+      placeholder: |
+        - Milestone 1:
+        - Milestone 2:
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / risks
+    validations:
+      required: false
+
+  - type: textarea
+    id: child_issues
+    attributes:
+      label: Child issues checklist
+      description: Add links to child issues and track progress.
+      placeholder: |
+        - [ ] #123
+        - [ ] #456
+    validations:
+      required: false

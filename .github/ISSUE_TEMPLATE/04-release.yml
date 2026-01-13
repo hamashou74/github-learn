@@ -1,0 +1,64 @@
+name: Release / Version Cut
+description: Prepare and cut a release branch (release checklist).
+title: "[Release]: v"
+labels: ["type:release"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to prepare a release branch and track release readiness.
+
+        **GitFlow note**
+        - Create `release/<version>` from `develop`.
+        - Stabilize, then merge into `main` and back into `develop`.
+
+  - type: input
+    id: version
+    attributes:
+      label: Target version
+      placeholder: "e.g., 1.6.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: release_type
+    attributes:
+      label: Release type
+      options:
+        - Patch
+        - Minor
+        - Major
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / included changes
+      description: Link key issues/PRs and summarize notable changes.
+      placeholder: |
+        - #123 (Feature) ...
+        - #456 (Bug) ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Release checklist
+      placeholder: |
+        - [ ] All required features merged to develop
+        - [ ] QA / regression completed
+        - [ ] Migration plan validated (if any)
+        - [ ] Release notes drafted
+        - [ ] Tag and deploy approved
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks / rollback notes
+      description: Key risks and how to mitigate/rollback.
+    validations:
+      required: false

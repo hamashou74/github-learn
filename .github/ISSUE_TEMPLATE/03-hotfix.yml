@@ -1,0 +1,90 @@
+name: Hotfix (Production Incident)
+description: Critical production issue requiring an urgent hotfix from main.
+title: "[Hotfix]: "
+labels: ["type:hotfix", "priority:P0", "status:triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for **production emergencies**.
+
+        **GitFlow note**
+        - Create `hotfix/<issue-number>-<short-slug>` from `main`.
+        - Merge back into `main` and `develop` (or the active `release/*`) after validation.
+
+  - type: input
+    id: incident_start
+    attributes:
+      label: Incident start time (approx.)
+      placeholder: "YYYY-MM-DD HH:MM (timezone)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - Outage (service unavailable)
+        - Data corruption / data loss risk
+        - Security exposure risk
+        - Major degradation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Incident summary
+      description: What is broken and who is impacted?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Affected scope
+      placeholder: |
+        - Affected endpoints/pages:
+        - Affected user segments:
+        - Error rates / metrics:
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_fix
+    attributes:
+      label: Proposed hotfix
+      description: Describe the minimal safe change to restore service.
+    validations:
+      required: true
+
+  - type: textarea
+    id: rollback
+    attributes:
+      label: Rollback plan
+      description: If the hotfix fails, how do we revert or mitigate?
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification steps
+      description: How will we confirm the fix in staging/production?
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: comms
+    attributes:
+      label: Incident hygiene
+      options:
+        - label: I confirmed this is a production emergency (not a normal bugfix).
+          required: true
+        - label: I will create or link a post-incident review / retrospective after mitigation.
+          required: false

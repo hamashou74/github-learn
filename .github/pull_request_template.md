@@ -30,9 +30,8 @@ GitHub supports keywords like `Fixes`, `Closes`, `Resolves` to auto-close issues
 
 ## Changes
 
-Bullet-list the key changes:
+## Bullet-list the key changes:
 
--
 -
 
 ## Testing

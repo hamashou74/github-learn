@@ -1,0 +1,51 @@
+name: Spike / Investigation
+description: Time-boxed research to reduce uncertainty.
+title: "[Spike]: "
+labels: ["type:spike"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Backend (API)
+        - Frontend (Web)
+        - Infrastructure / DevOps
+        - Cross-cutting
+    validations:
+      required: true
+
+  - type: input
+    id: timebox
+    attributes:
+      label: Timebox
+      placeholder: "e.g., 1 day, 3 days, 1 week"
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: What do we need to learn/decide?
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: Proposed approach
+      description: How will you investigate?
+    validations:
+      required: true
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Deliverables
+      placeholder: |
+        - Findings summary
+        - Recommendation
+        - Next-step issues
+    validations:
+      required: true

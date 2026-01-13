@@ -1,13 +1,9 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Questions / Support (GitHub Discussions)
-    url: https://github.com/hamashou74/github-learn/discussions/new?category=q-a
-    about: Please use Discussions for questions, troubleshooting, and general help.
+  - name: Questions / Support
+    url: https://github.com/hamashou74/bookshelf/discussions
+    about: Please ask and answer questions here.
 
-  - name: Security Vulnerability Report (Private)
-    url: https://github.com/hamashou74/github-learn/security/advisories/new
+  - name: Security Vulnerability Report
+    url: https://github.com/hamashou74/bookshelf/security/advisories/new
     about: Please report sensitive security issues privately via Security Advisories.
-
-  - name: Documentation
-    url: https://github.com/hamashou74/github-learn/wiki
-    about: Check the documentation before opening an issue.
