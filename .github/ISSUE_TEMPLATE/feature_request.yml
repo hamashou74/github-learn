@@ -1,41 +1,77 @@
-name: 💡 機能リクエスト
-description: 新機能のアイデアを提案する
-labels: ["enhancement"]
+name: Feature Request
+description: Suggest an enhancement or a new feature.
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        機能の提案ありがとうございます。以下の情報を記入してください。
+        Thanks for taking the time to propose an improvement.
+
+        Please write this request in **English**.
+
+  - type: checkboxes
+    id: duplicates
+    attributes:
+      label: Is there an existing request for this?
+      description: Please search the existing issues before creating a new one.
+      options:
+        - label: I have searched the existing issues.
+          required: true
 
   - type: textarea
     id: problem
     attributes:
-      label: 関連する問題
-      description: この機能リクエストに関連する問題を説明してください
-      placeholder: 例）〜の操作が面倒です
+      label: Problem statement
+      description: What problem are you trying to solve? Who is impacted?
+      placeholder: Describe the pain point and why it matters.
     validations:
       required: true
 
   - type: textarea
-    id: solution
+    id: proposal
     attributes:
-      label: 提案する解決策
-      description: 考えられる解決策を説明してください
+      label: Proposed solution
+      description: What would you like to happen? Describe the desired behavior/workflow.
+      placeholder: Describe your proposed solution in detail.
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation / use case
+      description: Explain the use case. Why is this a good addition? What does it enable?
+      placeholder: Provide context that helps us evaluate priority and scope.
     validations:
       required: true
 
   - type: textarea
     id: alternatives
     attributes:
-      label: 代替案
-      description: 検討した他の解決策があれば記述してください
+      label: Alternatives considered
+      description: What alternatives or workarounds have you tried?
+      placeholder: Describe alternatives and why they are insufficient.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: Roughly, how impactful is this to your workflow?
+      multiple: false
+      options:
+        - Low (nice to have)
+        - Medium
+        - High (blocks work)
     validations:
       required: false
 
   - type: textarea
-    id: additional
+    id: additional_context
     attributes:
-      label: その他の情報
-      description: スクリーンショットや参考資料などがあれば追加してください
+      label: Additional context
+      description: Links, references, mockups, screenshots, or prior art.
     validations:
       required: false
