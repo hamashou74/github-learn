@@ -1,0 +1,13 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Q&A
+    url: https://github.com/hamashou74/bookshelf/discussions
+
+# Issue作成時のテンプレート設定
+defaults:
+  - template: "bug_report.yml"
+    name: "🐛 バグ報告"
+    about: "バグを報告する"
+  - template: "feature_request.yml"
+    name: "💡 機能リクエスト"
+    about: "新機能のアイデアを提案する"
