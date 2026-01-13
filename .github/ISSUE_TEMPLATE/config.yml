@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Q&A
-    url: https://github.com/hamashou74/bookshelf/discussions
-    about: message
+  - name: "Q&A"
+    url: "https://github.com/hamashou74/bookshelf/discussions"
+    about: "message"
 
 defaults:
   - template: "bug_report.yml"
