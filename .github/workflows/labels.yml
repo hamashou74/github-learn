@@ -11,4 +11,4 @@ jobs:
       - name: Install dependencies
         run: npm install --global @azu/github-label-setup
       - name: update labels
-        run: $ github-label-setup --token ${{ secrets.GITHUB_TOKEN }} --labels .github/labels.json
+        run: github-label-setup --token ${{ secrets.GITHUB_TOKEN }} --labels .github/labels.json
