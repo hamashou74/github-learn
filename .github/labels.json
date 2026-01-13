@@ -1,135 +1,132 @@
-{
-  "schema_version": 1,
-  "labels": [
-    {
-      "name": "type:bug",
-      "color": "d73a4a",
-      "description": "Defect or regression."
-    },
-    {
-      "name": "type:feature",
-      "color": "0e8a16",
-      "description": "New feature or enhancement."
-    },
-    {
-      "name": "type:chore",
-      "color": "1d76db",
-      "description": "Refactor, maintenance, tooling, or dependency updates."
-    },
-    {
-      "name": "type:spike",
-      "color": "fbca04",
-      "description": "Time-boxed investigation to reduce uncertainty."
-    },
-    {
-      "name": "type:release",
-      "color": "5319e7",
-      "description": "Release planning, stabilization, and version cut."
-    },
-    {
-      "name": "type:hotfix",
-      "color": "b60205",
-      "description": "Production incident requiring urgent hotfix from main."
-    },
-    {
-      "name": "type:docs",
-      "color": "0075ca",
-      "description": "Documentation-only changes or requests."
-    },
-    {
-      "name": "type:epic",
-      "color": "3e4b9e",
-      "description": "Large deliverable composed of multiple issues."
-    },
-    {
-      "name": "area:backend",
-      "color": "0052cc",
-      "description": "Backend/API scope."
-    },
-    {
-      "name": "area:frontend",
-      "color": "5319e7",
-      "description": "Frontend/Web scope."
-    },
-    {
-      "name": "area:infra",
-      "color": "006b75",
-      "description": "Infrastructure/DevOps scope."
-    },
-    {
-      "name": "area:docs",
-      "color": "0075ca",
-      "description": "Documentation scope."
-    },
-    {
-      "name": "area:cross",
-      "color": "cfd3d7",
-      "description": "Cross-cutting (multiple areas)."
-    },
-    {
-      "name": "priority:p0",
-      "color": "b60205",
-      "description": "Immediate action required (critical / incident)."
-    },
-    {
-      "name": "priority:p1",
-      "color": "d93f0b",
-      "description": "High priority; address in the near term."
-    },
-    {
-      "name": "priority:p2",
-      "color": "fbca04",
-      "description": "Normal priority."
-    },
-    {
-      "name": "priority:p3",
-      "color": "0e8a16",
-      "description": "Low priority / backlog."
-    },
-    {
-      "name": "status:triage",
-      "color": "cfd3d7",
-      "description": "New issue awaiting triage."
-    },
-    {
-      "name": "status:needs-info",
-      "color": "fbca04",
-      "description": "Waiting for reporter clarification."
-    },
-    {
-      "name": "status:ready",
-      "color": "0e8a16",
-      "description": "Actionable and ready to be picked up."
-    },
-    {
-      "name": "status:in-progress",
-      "color": "1d76db",
-      "description": "Work has started (branch/PR in progress)."
-    },
-    {
-      "name": "status:needs-review",
-      "color": "5319e7",
-      "description": "PR opened; awaiting review."
-    },
-    {
-      "name": "status:needs-qa",
-      "color": "006b75",
-      "description": "Awaiting QA verification."
-    },
-    {
-      "name": "status:blocked",
-      "color": "b60205",
-      "description": "Blocked by a dependency or decision."
-    },
-    {
-      "name": "status:ready-to-merge",
-      "color": "0e8a16",
-      "description": "All checks complete; ready to merge."
-    },
-    {
-      "name": "status:ready-to-release",
-      "color": "0052cc",
-      "description": "Merged; queued for release or deployment."
-    }
-  ]
-}
+[
+  {
+    "name": "type:bug",
+    "color": "d73a4a",
+    "description": "Defect or regression."
+  },
+  {
+    "name": "type:feature",
+    "color": "0e8a16",
+    "description": "New feature or enhancement."
+  },
+  {
+    "name": "type:chore",
+    "color": "1d76db",
+    "description": "Refactor, maintenance, tooling, or dependency updates."
+  },
+  {
+    "name": "type:spike",
+    "color": "fbca04",
+    "description": "Time-boxed investigation to reduce uncertainty."
+  },
+  {
+    "name": "type:release",
+    "color": "5319e7",
+    "description": "Release planning, stabilization, and version cut."
+  },
+  {
+    "name": "type:hotfix",
+    "color": "b60205",
+    "description": "Production incident requiring urgent hotfix from main."
+  },
+  {
+    "name": "type:docs",
+    "color": "0075ca",
+    "description": "Documentation-only changes or requests."
+  },
+  {
+    "name": "type:epic",
+    "color": "3e4b9e",
+    "description": "Large deliverable composed of multiple issues."
+  },
+  {
+    "name": "area:backend",
+    "color": "0052cc",
+    "description": "Backend/API scope."
+  },
+  {
+    "name": "area:frontend",
+    "color": "5319e7",
+    "description": "Frontend/Web scope."
+  },
+  {
+    "name": "area:infra",
+    "color": "006b75",
+    "description": "Infrastructure/DevOps scope."
+  },
+  {
+    "name": "area:docs",
+    "color": "0075ca",
+    "description": "Documentation scope."
+  },
+  {
+    "name": "area:cross",
+    "color": "cfd3d7",
+    "description": "Cross-cutting (multiple areas)."
+  },
+  {
+    "name": "priority:p0",
+    "color": "b60205",
+    "description": "Immediate action required (critical / incident)."
+  },
+  {
+    "name": "priority:p1",
+    "color": "d93f0b",
+    "description": "High priority; address in the near term."
+  },
+  {
+    "name": "priority:p2",
+    "color": "fbca04",
+    "description": "Normal priority."
+  },
+  {
+    "name": "priority:p3",
+    "color": "0e8a16",
+    "description": "Low priority / backlog."
+  },
+  {
+    "name": "status:triage",
+    "color": "cfd3d7",
+    "description": "New issue awaiting triage."
+  },
+  {
+    "name": "status:needs-info",
+    "color": "fbca04",
+    "description": "Waiting for reporter clarification."
+  },
+  {
+    "name": "status:ready",
+    "color": "0e8a16",
+    "description": "Actionable and ready to be picked up."
+  },
+  {
+    "name": "status:in-progress",
+    "color": "1d76db",
+    "description": "Work has started (branch/PR in progress)."
+  },
+  {
+    "name": "status:needs-review",
+    "color": "5319e7",
+    "description": "PR opened; awaiting review."
+  },
+  {
+    "name": "status:needs-qa",
+    "color": "006b75",
+    "description": "Awaiting QA verification."
+  },
+  {
+    "name": "status:blocked",
+    "color": "b60205",
+    "description": "Blocked by a dependency or decision."
+  },
+  {
+    "name": "status:ready-to-merge",
+    "color": "0e8a16",
+    "description": "All checks complete; ready to merge."
+  },
+  {
+    "name": "status:ready-to-release",
+    "color": "0052cc",
+    "description": "Merged; queued for release or deployment."
+  }
+]
